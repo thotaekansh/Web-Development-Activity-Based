@@ -1,0 +1,639 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Academic Dashboard</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+body {
+    background: #f5f6f8;
+    color: #333333;
+    line-height: 1.6;
+}
+
+header {
+    background: #ffffff;
+    color: #26364a;
+    padding: 25px 7%;
+    border-bottom: 1px solid #e0e3e8;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+nav {
+    background: #ffffff;
+    padding: 14px 7%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-bottom: 1px solid #e0e3e8;
+}
+
+nav a {
+    color: #333333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #334e73;
+    text-decoration: underline;
+}
+
+.container {
+    width: 86%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.welcome {
+    background: #e8eef7;
+    color: #26364a;
+    padding: 28px;
+    border: 1px solid #d7e0ed;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.welcome h2 {
+    margin-bottom: 8px;
+}
+
+.section-title {
+    color: #334e73;
+    margin: 32px 0 16px;
+    font-size: 23px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e3e8;
+}
+
+.card h3 {
+    color: #606b78;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.number {
+    color: #334e73;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.card p {
+    margin-top: 5px;
+    color: #687382;
+    font-size: 14px;
+}
+
+.panel {
+    background: #ffffff;
+    padding: 22px;
+    margin-bottom: 22px;
+    border: 1px solid #e0e3e8;
+    border-radius: 8px;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 14px;
+}
+
+.profile-item {
+    padding: 12px;
+    background: #f5f7fa;
+    border: 1px solid #e5e8ed;
+    border-radius: 5px;
+    overflow-wrap: anywhere;
+}
+
+.profile-item strong {
+    color: #334e73;
+}
+
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+}
+
+.subject {
+    background: #ffffff;
+    padding: 20px;
+    border: 1px solid #e0e3e8;
+    border-radius: 8px;
+}
+
+.subject h3 {
+    color: #334e73;
+    margin-bottom: 10px;
+}
+
+.subject p {
+    color: #606b78;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 580px;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+th, td {
+    padding: 13px;
+    text-align: left;
+    border: 1px solid #e0e3e8;
+}
+
+th {
+    background: #e8eef7;
+    color: #26364a;
+}
+
+tbody tr:nth-child(even) {
+    background: #f8f9fb;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.submitted {
+    background: #e2f3e8;
+    color: #24643b;
+}
+
+.progress {
+    background: #fff1d6;
+    color: #805900;
+}
+
+.pending {
+    background: #fbe5e5;
+    color: #9b3030;
+}
+
+.notice {
+    padding: 14px;
+    background: #f5f7fa;
+    border-left: 3px solid #879bb8;
+    margin-bottom: 12px;
+}
+
+.notice p {
+    margin-top: 5px;
+    color: #606b78;
+}
+
+footer {
+    background: #e8eef7;
+    color: #26364a;
+    text-align: center;
+    padding: 22px;
+    margin-top: 35px;
+    border-top: 1px solid #d7e0ed;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 22px 5%;
+    }
+
+    nav {
+        padding: 14px 5%;
+        gap: 12px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .welcome {
+        padding: 20px;
+    }
+
+    .panel {
+        padding: 14px;
+    }
+
+    .section-title {
+        font-size: 21px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Student Academic Dashboard</h1>
+    <p>DR. RVR NRI Institute of Technology</p>
+</header>
+
+<nav>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#profile">Profile</a>
+    <a href="#subjects">Subjects</a>
+    <a href="#marks">Marks</a>
+    <a href="#attendance">Attendance</a>
+    <a href="#assignments">Assignments</a>
+    <a href="#timetable">Timetable</a>
+    <a href="#notices">Notices</a>
+</nav>
+
+<main class="container">
+
+    <section id="dashboard">
+        <div class="welcome">
+            <h2>Welcome, Ekansh!</h2>
+            <p>Welcome to your student academic dashboard.</p>
+            <p>Branch: CSM | Semester: 1st Semester</p>
+        </div>
+
+        <h2 class="section-title">Dashboard Overview</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Total Subjects</h3>
+                <div class="number">5</div>
+                <p>Current semester subjects</p>
+            </div>
+
+            <div class="card">
+                <h3>Average Attendance</h3>
+                <div class="number">90.2%</div>
+                <p>All subjects above 85%</p>
+            </div>
+
+            <div class="card">
+                <h3>Average Marks</h3>
+                <div class="number">43/50</div>
+                <p>Sample internal marks</p>
+            </div>
+
+            <div class="card">
+                <h3>Assignments Submitted</h3>
+                <div class="number">3/5</div>
+                <p>Sample assignment statuses</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="profile">
+        <h2 class="section-title">Student Profile</h2>
+
+        <div class="panel">
+            <div class="profile-grid">
+                <div class="profile-item"><strong>Name:</strong> Ekansh</div>
+                <div class="profile-item"><strong>Roll Number:</strong> 26001039</div>
+                <div class="profile-item"><strong>College:</strong> DR. RVR NRI Institute of Technology</div>
+                <div class="profile-item"><strong>Branch:</strong> CSM</div>
+                <div class="profile-item"><strong>Semester:</strong> 1st Semester</div>
+                <div class="profile-item"><strong>Academic Year:</strong> 2026–2027</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="subjects">
+        <h2 class="section-title">My Subjects</h2>
+
+        <div class="subject-grid">
+            <div class="subject">
+                <h3>Python Programming</h3>
+                <p>Internal Marks: 44/50</p>
+                <p>Attendance: 89%</p>
+            </div>
+
+            <div class="subject">
+                <h3>Computational Mathematics</h3>
+                <p>Internal Marks: 42/50</p>
+                <p>Attendance: 92%</p>
+            </div>
+
+            <div class="subject">
+                <h3>Web Development</h3>
+                <p>Internal Marks: 47/50</p>
+                <p>Attendance: 87%</p>
+            </div>
+
+            <div class="subject">
+                <h3>Professional Communication</h3>
+                <p>Internal Marks: 43/50</p>
+                <p>Attendance: 95%</p>
+            </div>
+
+            <div class="subject">
+                <h3>CTLR</h3>
+                <p>Internal Marks: 39/50</p>
+                <p>Attendance: 88%</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="marks">
+        <h2 class="section-title">Marks Report</h2>
+
+        <div class="panel">
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Subject</th>
+                            <th>Marks Obtained</th>
+                            <th>Maximum Marks</th>
+                            <th>Performance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Python Programming</td>
+                            <td>44</td>
+                            <td>50</td>
+                            <td>Good</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Computational Mathematics</td>
+                            <td>42</td>
+                            <td>50</td>
+                            <td>Good</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Web Development</td>
+                            <td>47</td>
+                            <td>50</td>
+                            <td>Excellent</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Professional Communication</td>
+                            <td>43</td>
+                            <td>50</td>
+                            <td>Good</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>CTLR</td>
+                            <td>39</td>
+                            <td>50</td>
+                            <td>Good</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="attendance">
+        <h2 class="section-title">Attendance Report</h2>
+
+        <div class="panel">
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Subject</th>
+                            <th>Classes Attended</th>
+                            <th>Total Classes</th>
+                            <th>Attendance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Python Programming</td>
+                            <td>40</td>
+                            <td>45</td>
+                            <td>89%</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Computational Mathematics</td>
+                            <td>46</td>
+                            <td>50</td>
+                            <td>92%</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Web Development</td>
+                            <td>39</td>
+                            <td>45</td>
+                            <td>87%</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Professional Communication</td>
+                            <td>38</td>
+                            <td>40</td>
+                            <td>95%</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>CTLR</td>
+                            <td>44</td>
+                            <td>50</td>
+                            <td>88%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="assignments">
+        <h2 class="section-title">Assignments</h2>
+
+        <div class="panel">
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Subject</th>
+                            <th>Assignment</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Python Programming</td>
+                            <td>List Methods and Programs</td>
+                            <td>30 Oct 2026</td>
+                            <td><span class="status submitted">Submitted</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Computational Mathematics</td>
+                            <td>Problem Solving Worksheet</td>
+                            <td>2 Nov 2026</td>
+                            <td><span class="status progress">In Progress</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Web Development</td>
+                            <td>HTML and CSS Website</td>
+                            <td>4 Nov 2026</td>
+                            <td><span class="status submitted">Submitted</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Professional Communication</td>
+                            <td>Communication Skills Report</td>
+                            <td>6 Nov 2026</td>
+                            <td><span class="status pending">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>CTLR</td>
+                            <td>Unit 1 Assignment</td>
+                            <td>9 Nov 2026</td>
+                            <td><span class="status submitted">Submitted</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="timetable">
+        <h2 class="section-title">Class Timetable</h2>
+
+        <div class="panel">
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Period</th>
+                            <th>Time</th>
+                            <th>Subject</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1st Period</td>
+                            <td>9:20 AM – 10:10 AM</td>
+                            <td>Subject to be added</td>
+                        </tr>
+                        <tr>
+                            <td>2nd Period</td>
+                            <td>10:10 AM – 11:00 AM</td>
+                            <td>Subject to be added</td>
+                        </tr>
+                        <tr>
+                            <td>Break</td>
+                            <td>11:00 AM – 11:10 AM</td>
+                            <td>Short Break</td>
+                        </tr>
+                        <tr>
+                            <td>3rd Period</td>
+                            <td>11:10 AM – 12:00 PM</td>
+                            <td>Subject to be added</td>
+                        </tr>
+                        <tr>
+                            <td>Lunch Break</td>
+                            <td>12:00 PM – 1:10 PM</td>
+                            <td>Lunch</td>
+                        </tr>
+                        <tr>
+                            <td>4th Period</td>
+                            <td>1:10 PM – 2:10 PM</td>
+                            <td>Subject to be added</td>
+                        </tr>
+                        <tr>
+                            <td>5th Period</td>
+                            <td>2:10 PM – 3:10 PM</td>
+                            <td>Subject to be added</td>
+                        </tr>
+                        <tr>
+                            <td>Break</td>
+                            <td>3:10 PM – 3:25 PM</td>
+                            <td>Short Break</td>
+                        </tr>
+                        <tr>
+                            <td>6th Period</td>
+                            <td>3:25 PM – 4:25 PM</td>
+                            <td>Subject to be added</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="notices">
+        <h2 class="section-title">Notices & Reminders</h2>
+
+        <div class="panel">
+            <div class="notice">
+                <strong>Assignment Reminder</strong>
+                <p>Check assignment deadlines and complete pending work on time.</p>
+            </div>
+
+            <div class="notice">
+                <strong>Attendance Reminder</strong>
+                <p>Maintain good attendance in every subject throughout the semester.</p>
+            </div>
+
+            <div class="notice">
+                <strong>Examination Reminder</strong>
+                <p>Revise all subjects regularly and prepare your notes before examinations.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Student Academic Dashboard</p>
+    <p>Ekansh | Roll No: 26001039 | CSM | 1st Semester</p>
+    <p>Academic Year 2026–2027</p>
+    <p>Sample data for website project</p>
+</footer>
+
+</body>
+</html>

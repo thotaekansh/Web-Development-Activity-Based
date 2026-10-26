@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ekansh | Personal Portfolio</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #263247;
+        }
+
+        header {
+            padding: 25px 8%;
+            background-color: #ffffff;
+            border-bottom: 1px solid #dce2eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h2 {
+            color: #234b78;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: #64748b;
+        }
+
+        nav {
+            background-color: #234b78;
+            padding: 18px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px 15px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #cbdff7;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+            flex-wrap: wrap;
+            padding: 75px 8%;
+            background-color: #e8eef6;
+        }
+
+        .hero-content {
+            flex: 2;
+            min-width: 250px;
+        }
+
+        .hero-card {
+            flex: 1;
+            min-width: 220px;
+            padding: 30px;
+            text-align: center;
+            background-color: #ffffff;
+            border: 1px solid #d5deea;
+            border-radius: 10px;
+        }
+
+        .tag {
+            color: #557da8;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            margin: 15px 0;
+            color: #1e293b;
+        }
+
+        .hero h1 span {
+            color: #315f91;
+        }
+
+        .hero-content p {
+            color: #526176;
+            line-height: 1.9;
+            font-size: 17px;
+        }
+
+        .hero-card h2 {
+            font-size: 28px;
+            color: #315f91;
+        }
+
+        .hero-card p {
+            color: #526176;
+            line-height: 1.8;
+        }
+
+        .container {
+            width: 84%;
+            margin: auto;
+        }
+
+        section {
+            margin: 30px 0;
+            padding: 30px;
+            background-color: #ffffff;
+            border: 1px solid #e0e6ee;
+            border-radius: 10px;
+        }
+
+        .section-title {
+            color: #234b78;
+            font-size: 25px;
+            margin-top: 0;
+        }
+
+        .about-text {
+            color: #526176;
+            line-height: 1.9;
+        }
+
+        .skills, .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill {
+            flex: 1;
+            min-width: 140px;
+            padding: 25px 15px;
+            text-align: center;
+            background-color: #f3f6fa;
+            border: 1px solid #dce4ef;
+            border-radius: 8px;
+        }
+
+        .skill h3 {
+            color: #315f91;
+        }
+
+        .skill p {
+            color: #64748b;
+        }
+
+        .project {
+            flex: 1;
+            min-width: 190px;
+            padding: 25px;
+            background-color: #f8fafc;
+            border: 1px solid #dce4ef;
+            border-radius: 8px;
+        }
+
+        .project h3 {
+            color: #315f91;
+        }
+
+        .project p {
+            color: #526176;
+            line-height: 1.8;
+        }
+
+        .project-label {
+            color: #7186a1;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #dce4ef;
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            color: #234b78;
+            background-color: #eaf0f7;
+        }
+
+        td {
+            background-color: #ffffff;
+        }
+
+        ul {
+            line-height: 2.2;
+            color: #526176;
+        }
+
+        .goal {
+            background-color: #edf3fa;
+            border: 1px solid #d5e1f0;
+        }
+
+        .goal .section-title {
+            color: #234b78;
+        }
+
+        footer {
+            padding: 30px 15px;
+            text-align: center;
+            background-color: #1e3552;
+        }
+
+        footer h2 {
+            color: #ffffff;
+            letter-spacing: 3px;
+        }
+
+        footer p {
+            color: #d3deeb;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>EKANSH.DEV</h2>
+        <p>MY PERSONAL PORTFOLIO</p>
+    </header>
+
+    <nav>
+        <a href="#about">ABOUT</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#education">EDUCATION</a>
+        <a href="#interests">INTERESTS</a>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <p class="tag">HELLO, WELCOME TO MY WORLD</p>
+            <h1>I'm Ekansh.<br><span>Future Developer.</span></h1>
+            <p>
+                I am a first-year B.Tech student exploring programming
+                and web development. I enjoy learning new skills and
+                transforming ideas into creative digital experiences.
+            </p>
+        </div>
+
+        <div class="hero-card">
+            <p class="tag">CURRENT STATUS</p>
+            <h2>LEARNING</h2>
+            <p>Python<br>HTML<br>CSS</p>
+            <p>Learn today. Build tomorrow.</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <section id="about">
+            <h2 class="section-title">01. About Me</h2>
+            <p class="about-text">
+                I am Ekansh, a first-year B.Tech student with an interest
+                in coding, website design, and technology. I believe that
+                consistent practice and curiosity help me improve my skills.
+                This portfolio presents my learning journey and projects.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">02. Technical Skills</h2>
+
+            <div class="skills">
+                <div class="skill">
+                    <h3>PYTHON</h3>
+                    <p>Programming fundamentals</p>
+                </div>
+
+                <div class="skill">
+                    <h3>HTML</h3>
+                    <p>Webpage structure</p>
+                </div>
+
+                <div class="skill">
+                    <h3>CSS</h3>
+                    <p>Webpage styling</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">03. Project Showcase</h2>
+
+            <div class="projects">
+                <div class="project">
+                    <p class="project-label">PROJECT 01</p>
+                    <h3>Personal Portfolio</h3>
+                    <p>
+                        A personal website presenting my profile,
+                        skills, interests, and career goals.
+                    </p>
+                </div>
+
+                <div class="project">
+                    <p class="project-label">PROJECT 02</p>
+                    <h3>College Website</h3>
+                    <p>
+                        A webpage organizing college information
+                        using HTML elements and CSS styling.
+                    </p>
+                </div>
+
+                <div class="project">
+                    <p class="project-label">PROJECT 03</p>
+                    <h3>Student Webpage</h3>
+                    <p>
+                        A student information webpage using headings,
+                        paragraphs, lists, and tables.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2 class="section-title">04. Education & Profile</h2>
+
+            <table>
+                <tr>
+                    <th>DETAIL</th>
+                    <th>INFORMATION</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Ekansh</td>
+                </tr>
+                <tr>
+                    <td>Course</td>
+                    <td>B.Tech</td>
+                </tr>
+                <tr>
+                    <td>Branch</td>
+                    <td>CSM</td>
+                </tr>
+                <tr>
+                    <td>Semester</td>
+                    <td>1st Semester</td>
+                </tr>
+                <tr>
+                    <td>College</td>
+                    <td>DR. RVR NRI INSTITUTE OF TECHNOLOGY</td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td>Vijayawada, Andhra Pradesh</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="interests">
+            <h2 class="section-title">05. Beyond Coding</h2>
+            <ul>
+                <li>Learning programming and problem solving</li>
+                <li>Designing and developing websites</li>
+                <li>Listening to music</li>
+                <li>Watching movies</li>
+                <li>Exploring new technologies</li>
+            </ul>
+        </section>
+
+        <section class="goal">
+            <h2 class="section-title">06. My Vision</h2>
+            <p class="about-text">
+                My goal is to strengthen my coding fundamentals, create
+                useful projects, and become a skilled software developer.
+                I am ready to learn, experiment, and improve one step at a time.
+            </p>
+        </section>
+
+    </div>
+
+    <footer>
+        <h2>LEARN. CREATE. GROW.</h2>
+        <p>Designed by Ekansh | Built with HTML & CSS</p>
+        <p>THANK YOU FOR VISITING MY PORTFOLIO</p>
+    </footer>
+
+</body>
+</html>
