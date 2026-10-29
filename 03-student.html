@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,36 +6,32 @@
 <title>Student Academic Dashboard</title>
 
 <style>
-* {
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: Arial, sans-serif;
-}
-
-html {
-    scroll-behavior: auto;
-}
-
-body {
-    background: #f5f6f8;
+    background-color: #f5f6f8;
     color: #333333;
     line-height: 1.6;
 }
 
 header {
-    background: #ffffff;
+    background-color: #ffffff;
     color: #26364a;
     padding: 25px 7%;
     border-bottom: 1px solid #e0e3e8;
 }
 
 header h1 {
-    margin-bottom: 5px;
+    margin: 0 0 5px 0;
+}
+
+header p {
+    margin: 0;
 }
 
 nav {
-    background: #ffffff;
+    background-color: #ffffff;
     padding: 14px 7%;
     display: flex;
     flex-wrap: wrap;
@@ -63,7 +58,7 @@ nav a:hover {
 }
 
 .welcome {
-    background: #e8eef7;
+    background-color: #e8eef7;
     color: #26364a;
     padding: 28px;
     border: 1px solid #d7e0ed;
@@ -72,23 +67,27 @@ nav a:hover {
 }
 
 .welcome h2 {
-    margin-bottom: 8px;
+    margin: 0 0 8px 0;
+}
+
+.welcome p {
+    margin: 4px 0;
 }
 
 .section-title {
     color: #334e73;
-    margin: 32px 0 16px;
+    margin: 32px 0 16px 0;
     font-size: 23px;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 18px;
 }
 
 .card {
-    background: #ffffff;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     border: 1px solid #e0e3e8;
@@ -97,7 +96,7 @@ nav a:hover {
 .card h3 {
     color: #606b78;
     font-size: 15px;
-    margin-bottom: 8px;
+    margin: 0 0 8px 0;
 }
 
 .number {
@@ -107,13 +106,13 @@ nav a:hover {
 }
 
 .card p {
-    margin-top: 5px;
+    margin: 5px 0 0 0;
     color: #687382;
     font-size: 14px;
 }
 
 .panel {
-    background: #ffffff;
+    background-color: #ffffff;
     padding: 22px;
     margin-bottom: 22px;
     border: 1px solid #e0e3e8;
@@ -122,16 +121,15 @@ nav a:hover {
 
 .profile-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 14px;
 }
 
 .profile-item {
     padding: 12px;
-    background: #f5f7fa;
+    background-color: #f5f7fa;
     border: 1px solid #e5e8ed;
     border-radius: 5px;
-    overflow-wrap: anywhere;
 }
 
 .profile-item strong {
@@ -140,12 +138,12 @@ nav a:hover {
 
 .subject-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 18px;
 }
 
 .subject {
-    background: #ffffff;
+    background-color: #ffffff;
     padding: 20px;
     border: 1px solid #e0e3e8;
     border-radius: 8px;
@@ -153,25 +151,19 @@ nav a:hover {
 
 .subject h3 {
     color: #334e73;
-    margin-bottom: 10px;
+    margin: 0 0 10px 0;
 }
 
 .subject p {
     color: #606b78;
     font-size: 14px;
-    margin-top: 5px;
-}
-
-.table-wrap {
-    width: 100%;
-    overflow-x: auto;
+    margin: 5px 0 0 0;
 }
 
 table {
     width: 100%;
-    min-width: 580px;
     border-collapse: collapse;
-    background: #ffffff;
+    background-color: #ffffff;
 }
 
 th, td {
@@ -181,12 +173,12 @@ th, td {
 }
 
 th {
-    background: #e8eef7;
+    background-color: #e8eef7;
     color: #26364a;
 }
 
-tbody tr:nth-child(even) {
-    background: #f8f9fb;
+.alt-row {
+    background-color: #f8f9fb;
 }
 
 .status {
@@ -198,39 +190,57 @@ tbody tr:nth-child(even) {
 }
 
 .submitted {
-    background: #e2f3e8;
+    background-color: #e2f3e8;
     color: #24643b;
 }
 
 .progress {
-    background: #fff1d6;
+    background-color: #fff1d6;
     color: #805900;
 }
 
 .pending {
-    background: #fbe5e5;
+    background-color: #fbe5e5;
     color: #9b3030;
 }
 
 .notice {
     padding: 14px;
-    background: #f5f7fa;
+    background-color: #f5f7fa;
     border-left: 3px solid #879bb8;
     margin-bottom: 12px;
 }
 
 .notice p {
-    margin-top: 5px;
+    margin: 5px 0 0 0;
     color: #606b78;
 }
 
 footer {
-    background: #e8eef7;
+    background-color: #e8eef7;
     color: #26364a;
     text-align: center;
     padding: 22px;
     margin-top: 35px;
     border-top: 1px solid #d7e0ed;
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .subject-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 600px) {
@@ -257,6 +267,23 @@ footer {
 
     .section-title {
         font-size: 21px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .subject-grid {
+        grid-template-columns: 1fr;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 13px;
     }
 }
 </style>
@@ -373,56 +400,54 @@ footer {
         <h2 class="section-title">Marks Report</h2>
 
         <div class="panel">
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>S.No.</th>
-                            <th>Subject</th>
-                            <th>Marks Obtained</th>
-                            <th>Maximum Marks</th>
-                            <th>Performance</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Python Programming</td>
-                            <td>44</td>
-                            <td>50</td>
-                            <td>Good</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Computational Mathematics</td>
-                            <td>42</td>
-                            <td>50</td>
-                            <td>Good</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Web Development</td>
-                            <td>47</td>
-                            <td>50</td>
-                            <td>Excellent</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Professional Communication</td>
-                            <td>43</td>
-                            <td>50</td>
-                            <td>Good</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>CTLR</td>
-                            <td>39</td>
-                            <td>50</td>
-                            <td>Good</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Subject</th>
+                        <th>Marks Obtained</th>
+                        <th>Maximum Marks</th>
+                        <th>Performance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Python Programming</td>
+                        <td>44</td>
+                        <td>50</td>
+                        <td>Good</td>
+                    </tr>
+                    <tr class="alt-row">
+                        <td>2</td>
+                        <td>Computational Mathematics</td>
+                        <td>42</td>
+                        <td>50</td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Web Development</td>
+                        <td>47</td>
+                        <td>50</td>
+                        <td>Excellent</td>
+                    </tr>
+                    <tr class="alt-row">
+                        <td>4</td>
+                        <td>Professional Communication</td>
+                        <td>43</td>
+                        <td>50</td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>CTLR</td>
+                        <td>39</td>
+                        <td>50</td>
+                        <td>Good</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
@@ -430,56 +455,54 @@ footer {
         <h2 class="section-title">Attendance Report</h2>
 
         <div class="panel">
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>S.No.</th>
-                            <th>Subject</th>
-                            <th>Classes Attended</th>
-                            <th>Total Classes</th>
-                            <th>Attendance</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Python Programming</td>
-                            <td>40</td>
-                            <td>45</td>
-                            <td>89%</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Computational Mathematics</td>
-                            <td>46</td>
-                            <td>50</td>
-                            <td>92%</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Web Development</td>
-                            <td>39</td>
-                            <td>45</td>
-                            <td>87%</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Professional Communication</td>
-                            <td>38</td>
-                            <td>40</td>
-                            <td>95%</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>CTLR</td>
-                            <td>44</td>
-                            <td>50</td>
-                            <td>88%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Subject</th>
+                        <th>Classes Attended</th>
+                        <th>Total Classes</th>
+                        <th>Attendance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Python Programming</td>
+                        <td>40</td>
+                        <td>45</td>
+                        <td>89%</td>
+                    </tr>
+                    <tr class="alt-row">
+                        <td>2</td>
+                        <td>Computational Mathematics</td>
+                        <td>46</td>
+                        <td>50</td>
+                        <td>92%</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Web Development</td>
+                        <td>39</td>
+                        <td>45</td>
+                        <td>87%</td>
+                    </tr>
+                    <tr class="alt-row">
+                        <td>4</td>
+                        <td>Professional Communication</td>
+                        <td>38</td>
+                        <td>40</td>
+                        <td>95%</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>CTLR</td>
+                        <td>44</td>
+                        <td>50</td>
+                        <td>88%</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
@@ -487,56 +510,54 @@ footer {
         <h2 class="section-title">Assignments</h2>
 
         <div class="panel">
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>S.No.</th>
-                            <th>Subject</th>
-                            <th>Assignment</th>
-                            <th>Due Date</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Python Programming</td>
-                            <td>List Methods and Programs</td>
-                            <td>30 Oct 2026</td>
-                            <td><span class="status submitted">Submitted</span></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Computational Mathematics</td>
-                            <td>Problem Solving Worksheet</td>
-                            <td>2 Nov 2026</td>
-                            <td><span class="status progress">In Progress</span></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Web Development</td>
-                            <td>HTML and CSS Website</td>
-                            <td>4 Nov 2026</td>
-                            <td><span class="status submitted">Submitted</span></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Professional Communication</td>
-                            <td>Communication Skills Report</td>
-                            <td>6 Nov 2026</td>
-                            <td><span class="status pending">Pending</span></td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>CTLR</td>
-                            <td>Unit 1 Assignment</td>
-                            <td>9 Nov 2026</td>
-                            <td><span class="status submitted">Submitted</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Subject</th>
+                        <th>Assignment</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Python Programming</td>
+                        <td>List Methods and Programs</td>
+                        <td>30 Oct 2026</td>
+                        <td><span class="status submitted">Submitted</span></td>
+                    </tr>
+                    <tr class="alt-row">
+                        <td>2</td>
+                        <td>Computational Mathematics</td>
+                        <td>Problem Solving Worksheet</td>
+                        <td>2 Nov 2026</td>
+                        <td><span class="status progress">In Progress</span></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Web Development</td>
+                        <td>HTML and CSS Website</td>
+                        <td>4 Nov 2026</td>
+                        <td><span class="status submitted">Submitted</span></td>
+                    </tr>
+                    <tr class="alt-row">
+                        <td>4</td>
+                        <td>Professional Communication</td>
+                        <td>Communication Skills Report</td>
+                        <td>6 Nov 2026</td>
+                        <td><span class="status pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>CTLR</td>
+                        <td>Unit 1 Assignment</td>
+                        <td>9 Nov 2026</td>
+                        <td><span class="status submitted">Submitted</span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
@@ -544,64 +565,62 @@ footer {
         <h2 class="section-title">Class Timetable</h2>
 
         <div class="panel">
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Period</th>
-                            <th>Time</th>
-                            <th>Subject</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1st Period</td>
-                            <td>9:20 AM – 10:10 AM</td>
-                            <td>Subject to be added</td>
-                        </tr>
-                        <tr>
-                            <td>2nd Period</td>
-                            <td>10:10 AM – 11:00 AM</td>
-                            <td>Subject to be added</td>
-                        </tr>
-                        <tr>
-                            <td>Break</td>
-                            <td>11:00 AM – 11:10 AM</td>
-                            <td>Short Break</td>
-                        </tr>
-                        <tr>
-                            <td>3rd Period</td>
-                            <td>11:10 AM – 12:00 PM</td>
-                            <td>Subject to be added</td>
-                        </tr>
-                        <tr>
-                            <td>Lunch Break</td>
-                            <td>12:00 PM – 1:10 PM</td>
-                            <td>Lunch</td>
-                        </tr>
-                        <tr>
-                            <td>4th Period</td>
-                            <td>1:10 PM – 2:10 PM</td>
-                            <td>Subject to be added</td>
-                        </tr>
-                        <tr>
-                            <td>5th Period</td>
-                            <td>2:10 PM – 3:10 PM</td>
-                            <td>Subject to be added</td>
-                        </tr>
-                        <tr>
-                            <td>Break</td>
-                            <td>3:10 PM – 3:25 PM</td>
-                            <td>Short Break</td>
-                        </tr>
-                        <tr>
-                            <td>6th Period</td>
-                            <td>3:25 PM – 4:25 PM</td>
-                            <td>Subject to be added</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Period</th>
+                        <th>Time</th>
+                        <th>Subject</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1st Period</td>
+                        <td>9:20 AM – 10:10 AM</td>
+                        <td>Subject to be added</td>
+                    </tr>
+                    <tr class="alt-row">
+                        <td>2nd Period</td>
+                        <td>10:10 AM – 11:00 AM</td>
+                        <td>Subject to be added</td>
+                    </tr>
+                    <tr>
+                        <td>Break</td>
+                        <td>11:00 AM – 11:10 AM</td>
+                        <td>Short Break</td>
+                    </tr>
+                    <tr class="alt-row">
+                        <td>3rd Period</td>
+                        <td>11:10 AM – 12:00 PM</td>
+                        <td>Subject to be added</td>
+                    </tr>
+                    <tr>
+                        <td>Lunch Break</td>
+                        <td>12:00 PM – 1:10 PM</td>
+                        <td>Lunch</td>
+                    </tr>
+                    <tr class="alt-row">
+                        <td>4th Period</td>
+                        <td>1:10 PM – 2:10 PM</td>
+                        <td>Subject to be added</td>
+                    </tr>
+                    <tr>
+                        <td>5th Period</td>
+                        <td>2:10 PM – 3:10 PM</td>
+                        <td>Subject to be added</td>
+                    </tr>
+                    <tr class="alt-row">
+                        <td>Break</td>
+                        <td>3:10 PM – 3:25 PM</td>
+                        <td>Short Break</td>
+                    </tr>
+                    <tr>
+                        <td>6th Period</td>
+                        <td>3:25 PM – 4:25 PM</td>
+                        <td>Subject to be added</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
